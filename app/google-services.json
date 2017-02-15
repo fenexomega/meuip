@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "817011353084",
+    "firebase_url": "https://meuip-6002c.firebaseio.com",
+    "project_id": "meuip-6002c",
+    "storage_bucket": "meuip-6002c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817011353084:android:5e18a6bf2939a596",
+        "android_client_info": {
+          "package_name": "br.com.jordyf.ip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817011353084-9ndupkrqsloj1b7d5680h8f8lfhp97ph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEm902pBgmqS_4LSlg_P03-Zg95Zh_9Iw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
