@@ -16,4 +16,11 @@
     <string name="new_ip">Seu novo IP:</string>
     <string name="click_here">Clique aqui para copiar ou compartilhar</string>
     <string name="today">Hoje</string>
+    <string name="ok">Ok</string>
+    <string name="not">Não</string>
+    <string name="no">Não</string>
+    <string name="yes">Sim </string>
+    <string name="sure_delete">Tem certeza?</string>
+    <string name="text_copied">Texto copiado!</string>
+
 </resources>

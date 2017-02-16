@@ -15,4 +15,10 @@
     <string name="new_ip">Your new IP:</string>
     <string name="click_here">Click here to copy or share</string>
     <string name="today">Today</string>
+    <string name="ok">Ok</string>
+    <string name="not">Not</string>
+    <string name="no">No</string>
+    <string name="yes">Yes </string>
+    <string name="sure_delete">Are you sure?</string>
+    <string name="text_copied">Text Copied!</string>
 </resources>

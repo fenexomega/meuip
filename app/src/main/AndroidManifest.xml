@@ -31,7 +31,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.ListActivity"></activity>
+        <activity android:name=".activity.ListActivity"
+            android:parentActivityName=".activity.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -43,6 +43,7 @@ import butterknife.OnClick;
 import jordyf.com.br.ip.R;
 import jordyf.com.br.ip.model.IPRegistry;
 import jordyf.com.br.ip.services.InternetReceiver;
+import jordyf.com.br.ip.util.ClipboardUtility;
 import jordyf.com.br.ip.util.HttpConnection;
 import jordyf.com.br.ip.util.Prefs;
 
@@ -180,9 +181,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.copy)
     public void Copy()
     {
-        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("", _ip.getText());
-        clipboard.setPrimaryClip(clip);
+        ClipboardUtility.copyToClipBoard(MainActivity.this, _ip.getText().toString());
 
         Snackbar.make(rootView,"Texto copiado!",Snackbar.LENGTH_LONG).show();
 

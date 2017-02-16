@@ -24,6 +24,6 @@ public class ListActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(new IPListaAdapter(getBaseContext()));
+        recyclerView.setAdapter(new IPListaAdapter(this));
     }
 }
