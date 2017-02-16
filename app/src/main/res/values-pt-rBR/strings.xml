@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_url">http://ip.jordyf.me</string>
+    <string name="banner1"> ca-app-pub-8011185401618701/3298549871</string>
+    <string name="banner2"> ca-app-pub-8011185401618701/3158949078</string>
+    <string name="banner3">ca-app-pub-8011185401618701/1505589072</string>
+    <string name="bannertest">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="app_name">IP</string>
+    <string name="ip_text">Carregando</string>
+    <string name="share">Compartilhar</string>
+    <string name="copy">Copiar</string>
+    <string name="error_string">Não foi possível pegar se uIP</string>
+    <string name="show_notifications">Mostrar notificações quando o IP mudar</string>
+    <string name="your_ip">Seu IP é:</string>
+    <string name="wifi_needed">Você precisa de uma conexão ativa de internet para usar esse serviço</string>
+    <string name="new_ip">Seu novo IP:</string>
+    <string name="click_here">Clique aqui para copiar ou compartilhar</string>
+    <string name="today">Hoje</string>
+</resources>

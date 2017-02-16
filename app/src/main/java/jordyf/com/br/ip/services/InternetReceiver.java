@@ -13,6 +13,7 @@ import android.support.v4.app.NotificationCompat;
 
 import jordyf.com.br.ip.R;
 import jordyf.com.br.ip.activity.MainActivity;
+import jordyf.com.br.ip.model.IPRegistry;
 import jordyf.com.br.ip.util.HttpConnection;
 import jordyf.com.br.ip.util.Prefs;
 
@@ -35,6 +36,8 @@ public class InternetReceiver extends BroadcastReceiver {
             HttpConnection.Get(context, url, new HttpConnection.ICommand() {
                 @Override
                 public void Run(String response) {
+                    IPRegistry registry = new IPRegistry(response);
+                    registry.save();
                     showNotification(context, response);
 
                 }
@@ -60,6 +63,9 @@ public class InternetReceiver extends BroadcastReceiver {
 
         /** Getting the System service NotificationManager */
         NotificationManager nManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        /** Cancel all notifications */
+        nManager.cancelAll();
 
         /** Configuring notification builder to create a notification */
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)

@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,10 @@ import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Pair;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -36,12 +41,14 @@ import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import jordyf.com.br.ip.R;
+import jordyf.com.br.ip.model.IPRegistry;
 import jordyf.com.br.ip.services.InternetReceiver;
 import jordyf.com.br.ip.util.HttpConnection;
 import jordyf.com.br.ip.util.Prefs;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MeuIP" ;
     private int MY_SOCKET_TIMEOUT_MS = 10000;
 
     @BindView(R.id.text_ip)
@@ -59,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.adView1)
     AdView _adView;
 
-    @BindView(R.id.adView2)
-    AdView _adView2;
+//    @BindView(R.id.adView2)
+//    AdView _adView2;
 
     @BindView(R.id.adView3)
     AdView _adView3;
@@ -89,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         AdRequest adRequest = new AdRequest.Builder().build();
         _adView.loadAd(adRequest);
-        _adView2.loadAd(adRequest);
+//        _adView2.loadAd(adRequest);
         _adView3.loadAd(adRequest);
 
         Boolean value = Prefs.getBoolean(this,"enable_notifications");
@@ -144,6 +151,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void Run(String response) {
                 _ip.setText(response);
+                try
+                {
+                    IPRegistry lastIp = (IPRegistry) IPRegistry
+                            .find(IPRegistry.class, null, null, null, "timestamp DESC", "1");
+                    if(lastIp.getIp().equals(response) == false)
+                    {
+                        IPRegistry newIp = new IPRegistry(response);
+                        newIp.save();
+                    }
+                }
+                catch (SQLiteException e)
+                {
+                    Log.d(TAG, "MainActivity: " + e.getLocalizedMessage());
+                }
+
+
             }
 
             @Override
@@ -176,5 +199,22 @@ public class MainActivity extends AppCompatActivity {
                 .startChooser();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_toolbar, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.action_see_list)
+        {
+            Intent intent = new Intent(this,ListActivity.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

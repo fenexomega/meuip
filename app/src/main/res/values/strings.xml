@@ -14,4 +14,5 @@
     <string name="wifi_needed">You need an active Wifi connection to use this service.</string>
     <string name="new_ip">Your new IP:</string>
     <string name="click_here">Click here to copy or share</string>
+    <string name="today">Today</string>
 </resources>
