@@ -1,11 +1,19 @@
 <resources>
     <string name="server_url">http://ip.jordyf.me</string>
-    <string name="banner1"> ca-app-pub-8011185401618701/3298549871</string>
-    <string name="banner2"> ca-app-pub-8011185401618701/3158949078</string>
-    <string name="banner3">ca-app-pub-8011185401618701/1505589072</string>
-    <string name="bannertest">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!--UNCOMMENT FOR RELEASE-->
+    <!--<string name="banner1"> ca-app-pub-8011185401618701/3298549871</string>-->
+    <!--<string name="banner2"> ca-app-pub-8011185401618701/3158949078</string>-->
+    <!--<string name="banner3"> ca-app-pub-8011185401618701/1505589072</string>-->
+
+    <!-- FOR TESTING -->
+    <string name="banner1"> ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner2"> ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner3"> ca-app-pub-3940256099942544/6300978111</string>
+
+    <!--NORMAL FROM HERE ON-->
     <string name="app_name">IP</string>
-    <string name="ip_text">Loading...</string>
+    <string name="ip_text">Loading…</string>
     <string name="share">Share</string>
     <string name="copy">Copy</string>
     <string name="error_string">I couldn\'t get your ip.</string>
